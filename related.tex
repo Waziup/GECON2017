@@ -1,0 +1,168 @@
+
+
+\section{Related works}
+\label{sec:relworks}
+
+In this section, we survey the related works.
+We first analyse similar works from the literature.
+Regarding the IoT big data aspect, the research have already been largely instanciated inside Open Source frameworks.
+We present a selection of the most interesting Open Source contributions.
+
+\subsection{Review of literature}
+
+\paragraph{IoT in Africa:}
+Their is very little penetration of IoT in Africa, as evidentiated in~\cite{Onyalo2015} and~\cite{Masinde2014}.
+The authors of~\cite{Onyalo2015} provide a survey, country by country, of the undertaking of IoT.
+They also document some of the challenges affecting adoption of IoT in the continent.
+Africa has only 7\% of her households on the Internet; this is far behind the world’s figure of 41\%.
+Given this lag in the baseline technology needed to implement Internet of Things, the author of~\cite{Masinde2014} advocate for a technological leap and an African-centric approaches to IoT.
+Taking the case of a drought early warning and assets tracking systems, the author demonstrates that by innovatively incorporating the realities such as the prevalence of African indigenous knowledge on weather, unreliable communication, low-end mobile phone handsets, among others, a home-grown Internet of Things flavour has higher chance of succeeding.
+An extensive report from Cisco~\cite{ITU2015} provides also many insights on the current use and potential of Internet of Things (IoT) technologies in tackling global development challenges, highlighting a number of specific instances where IoT interventions are helping to solve some of the world’s most pressing issues.
+
+
+A deployment of a Wireless Sensor Network for precise irrigation in Malawi is presented in~\cite{Mafuta2013}.
+For the system to be self-sustained in terms of power, the study used solar photovoltaic and rechargeable batteries to power all electrical devices.
+The system incorporated a remote monitoring mechanism through a General Packet Radio Service modem to report soil temperature, soil moisture, WSN
+link performance, and photovoltaic power levels. 
+Irrigation valves were activated to water the field.
+The paper give insights to develop a robust, fully automated, solar-powered, and low-cost irrigation system to suit the socioeconomic conditions of small scale farmers in developing countries.
+
+The authors of~\cite{Dlodlo2015} provides a survey of possible IoT applications in South Africa and Zambia.
+In particular, they identify examples of IoTs to mitigate the agricultural needs of these communities for the domains of crop farming, weather forecasting, wildlife management, forestry, livestock farming, market identification and rural financing.
+
+
+\paragraph{IoT in Agriculture:}
+There is not a lot of literature on the specific topic of applying IoT in agriculture, and practically none went it comes to rural Africa.
+In~\cite{Bing2012}, the author presents a work supporting the transition from traditional agriculture to modern agriculture in China.
+They propose an agriculture intelligent system based on IOT for organic melon and fruit production. 
+A number of new technologies are used, such as RFID and sensors.
+They monitor temperature, humidity, light and $CO_2$ around the crops and use a small model on the fruits of growth process.
+Always in China,~\cite{TongKe2013} uses Internet of things and RFID technologies to realize automatic control production of agriculture.
+
+In~\cite{Dan2015}, the authors perform temperature control in greenhouse using Zigbee.
+In~\cite{Hu2011a}, the authors elaborate a crop growth model.
+The model is then embbeded in their IOT application system.
+This allows them to make the system more intelligent and adaptive for the facility agriculture.
+The authors of~\cite{Nakutis2015} and~\cite{Sarkar2016} proposes remote agriculture monitoring and process automation.
+They are both based on gateway infrastructure and wireless connection.
+The work in~\cite{Jayaraman2015} shows a semantically enhanced digital agriculture use case built with the OpenIoT platform.
+
+In~\cite{Ilapakurti2015}, the authors uses IoT to check electronically on the vital signs of the cattles.
+Their tool facilitates the day to day management of dairy activities.
+It also provides forecastings allowing to handle weather related issues, cattle health and emergencies.
+
+IoT is also deployed within the product supply chain, another key area of agriculture.
+In~\cite{Han2014}, the authors builds a quantitative trust model to describe the trustworthiness of foods delivered in supply chains.
+The Internet of Agricultural Things (AIoT), where the technologies of the Internet of Things are widely used in all of the phases in the agriculture industry, is proposed to resolve the food safety problem.
+In order to provide a common model to describe and transmit the data in agriculture Internet of Things, \cite{Hu2011} proposes a specific ontology, while~\cite{Liu2014} uses a naming service to identify products.
+
+
+With difference with the literature surveyed in this section, the proposed Waziup platform is a full IoT platform taylored entierly for African need and constraints.
+In particular, it as application hosting capacities based on the PaaS paradigm, is resilient to disconnections and provides big data capacities.
+
+
+
+\subsection{Review of Big Data tools}
+
+Far from an exhaustive list, this paragraph describes the most used Open Source Big Data tools and compares them in order to give a better understanding of the Big Data ecosystem. Moreover, this review gives an indication on the best tools fitted for WAZIUP platform. 
+
+
+\paragraph{Databases and data warehouses}
+
+HDFS, developed by Apache, is a distributed, scalable and portable file-system written in Java for the Hadoop Framework\footnote{https://hadoop.apache.org/docs/r1.2.1/hdfs\_design.html}.
+It has been designed for large dataset analysis and by its structure has high fault tolerance. It is the basis upon which everything works in the Hadoop Ecosystem.
+Build on top of HDFS, Apache HBase is a distributed, non-relational column oriented datastore\footnote{https://hbase.apache.org/}.
+HBase is designed to efficiently address random access and fast record lookup.
+It has the capability to handle extremely large tables of data with low latency.
+Though, this data storage tool should be used when random and real-time read/write access to data is needed and when many thousands of operation per seconds need to be performed on large datasets (up to petabytes).
+
+Apache Hive\footnote{https://hive.apache.org/} is a data warehouse infrastructure that can manage and query unstructured data as if it were structured.
+As a full component of Hadoop Ecosystem, it uses MapReduce for execution and HDFS for storage.
+It has its own language SQL-like (HiveQL) that brings expressiveness to the queries.
+This storage mode should be used for SQL-like queries and when higher language than MapReduce is needed.
+Used by big companies who can’t afford to lose data (Apple, Netflix, Spotify …), Apache Cassandra\footnote{http://cassandra.apache.org/} is a column oriented database of structured data. The data are highly available thru column indexes and are automatically replicated thru multiple nodes for fault tolerance.
+Cassandra has a unique masterless “ring” design that is easy to setup and to maintain\footnote{http://www.planetcassandra.org/what-is-apache-cassandra/}.This tools should be use when losing data is not the critical point and not affordable.  
+
+First considered as an outsider, getting rid of traditional table-based relational database, mongoDB\footnote{https://www.mongodb.com/} quickly became a must-have tool: a NoSQL, relational, document oriented database.
+Document are shared in JSON format with dynamic schemas (called BSON) and makes the integration of data sometimes easier.
+This database is very useful when you need to consume your data in many applications, as many connectors have been developed.
+
+\paragraph{Data publication and subscription}
+
+Apache Flume\footnote{https://flume.apache.org} is a distributed, reliable and available service for efficiently collecting, aggregating and moving large amounts of streaming event data.
+Flume should be used if the data is designed for Hadoop as it can move them to HDFS.
+It has many built-in sources and sinks and can process data in-flight using interceptors, which is useful for data masking or filtering.
+It is composed of agents and data collectors (and interceptors if needed).
+
+More general purpose, Apache Kafka\footnote{http://kafka.apache.org} is a high-throughput, distributed, publish-subscribe messaging system.
+It can replicate events, has low latency and is capable of data partitioning. Kafka is also easily scalable and this tool is very useful when the data is to be consumed by multiple applications. It is composed of producer, consumers and topics.
+Actually, we might not have to choose between Kafka and Flume, as both can work quite well together.
+If the workflow design requires streaming data from Kafka to Hadoop, using a Flume agent with Kafka source to read the data makes sense.
+This association is quite common and is called Flafka\footnote{http://blog.cloudera.com/blog/2014/11/flafka-apache-flume-meets-apache-kafka-for-event-processing/}.
+If a Data/Context Scenario is developed, we may need to use a context broker.
+Orion Context Broker\footnote{http://catalogue.fiware.org/enablers/publishsubscribe-context-broker-orion-context-broker} (FIWARE platform) is a publish/subscribe platform that is able to register context elements and manage them through updates and queries.
+It is possible to subscribe to context information when some conditions occurs (e.g. an interval of time passed or the context elements have changed).
+Orion is a C++ implementation of the NGSI9/10 REST API binding developed as a part of the FIWARE platform.
+
+\paragraph{Data processing}
+
+Obviously, choosing a data processing tool depends mostly on the outcome expected from the data.
+The most common tool for BigData analysis, and what we probably think at first, is Hadoop MapReduce\footnote{http://hadoop.apache.org}.
+It has proven its efficiency in many ways and is an incredible tool.
+But if we want to step a bit aside of Hadoop workflow or if we have specific needs, other tools exists and some are becoming more and more powerful.
+
+But first, let’s talk about this milestone Hadoop MapReduce.
+MapReduce programming model contributed to the amazing progress of BigData processing this past decade.
+By breaking down the work and recombining it in series of parallelizable operations, it is simple but incredibly efficient and scalable to ten thousands of machines if needed.
+It can run on inexpensive hardware, lowering the cost of a computing cluster.
+The latest version of MapReduce is YARN, called also MapReduce 2.0.
+
+If a higher level of programming on top of MapReduce is needed, Apache Pig\footnote{http://pig.apache.org} is the one.
+Pig has its own language (PigLatin) similar to SQL and works on top of MapReduce.
+Pig Engine parses, optimizes and automatically executes PigLatin scripts as a series of MapReduce jobs on a Hadoop cluster.
+It’s easy to learn and opens Hadoop to data professionals who may not be software engineers.
+
+First designed to work with HDFS on top of YARN, Apache Spark\footnote{http://spark.apache.org} is a different system for processing data and can work out of Hadoop ecosystem with other data managements systems.
+It does not work with MapReduce and it can be up to a hundred times faster than MapReduce with its capacity to work in-memory, allowing to keep large working datasets in-memory between jobs, reducing considerably the latency.
+What makes it more and more attractive to many users worldwide, is its wide range of applications: batch and stream processing (micro-batch processing with 0.5s latency), machine learning (MLib), SQL (with Hive), graph Analytics (graphX).
+Language supported are Java, Python and Scala.
+
+Demand for stream processing becoming more and more important in Big Data analysis, Apache Flink\footnote{http://flink.apache.org} has been recently developed and is growing very fast.
+Flink is a streaming dataflow engine that provides data distribution, communication and fault tolerance.
+It has almost no latency as the data are streamed in real-time (row by row).
+It runs on YARN and works with its own extended version of MapReduce. Language supported are Java and Scala.
+
+\paragraph{Machine learning}
+
+Machine learning is the union between statistics and artificial intelligence.
+It blends AI heuristics with advanced statistical analysis.
+We let the machine learn about the data, make decisions, and then apply statistics.
+Algorithms used for this tasks can be grouped in 3 domains of actions: Classification, association and clustering.
+To choose an algorithm, different parameters must be considered: scalability, robustness, transparency and proportionality.
+Overlearning (or overfitting) of the model must be carefully checked.
+
+Without any math or programming requirement, KNIME\footnote{http://www.knime.org} is an analytic platform that allow the user to proceed the data in a user-friendly graphical interface.
+It is a good tool to train your model and evaluate different machine learning algorithms rapidly.
+If the workflow is already deployed on Hadoop, a machine learning library exists and is called Mahout\footnote{http://mahout.apache.org}.
+Spark also has his own machine learning library called MLib\footnote{http://spark.apache.org/mllib/}.
+H20\footnote{http://www.h2o.ai/} is a software dedicated to machine-learning, which can be deployed on Hadoop or Spark (Flink in development).
+It has an easy to use Web interface, which makes possible to combine big data analytics easily with machine learning algorithm to train models.
+
+\paragraph{Data visualisation and exploration}
+
+To visualise the data in real time, Freeboard provides a simple, real-time dashboard, commonly used in IoT world\footnote{https://freeboard.io/}.
+There is a direct Orion Fiware connector.
+To connect with streaming engines, a JSON connector can be used.
+Design is simple and customisation is not possible, but it is a very good dashboard to visualise easily raw data coming from sensors, before data analysis.
+
+Tableau Public\footnote{https://public.tableau.com/s/} offers a good visualisation and exploration tool on batch data.
+Tableau is a software where you can upload your analysed data (previously extracted in .csv format).
+The visualisation tool is very powerful and allow a deep exploration the data.
+However it is not designed for really Big Data with large datasets and the open Source version of Tableau (Public) does not offer the data streaming capacities (e.g. Spark connectors).
+Nevertheless, Tableau Public is a highly customisable, user-friendly and intuitive exploration tool for data that have already been processed and analysed.
+
+To visualise data in real-time, after analysis (filtering, aggregating, correlating …), one of the best tool is probably Kibana\footnote{ https://www.elastic.co/fr/products/kibana}.
+It is the visualisation tool coming with ElasticSearch.
+Elasticsearch is a search server based on Apache Lucene that provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents.
+It is really designed for real-time analytics, most commonly used with Flink or Spark Streaming.
+

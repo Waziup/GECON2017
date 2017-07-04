@@ -1,0 +1,92 @@
+\documentclass{llncs}
+
+\usepackage[nocompress]{cite}
+\usepackage[english]{babel}
+%\usepackage{minted}
+\usepackage{array}
+\usepackage{url}
+\usepackage{ifthen}
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+
+%common abbreviations
+\newcommand{\etal}{{\it et al.}}
+\newcommand{\etc}{{\it etc.}}
+\newcommand{\ie}{\emph{i.e.}}
+\newcommand{\eg}{{\em e.g.}}
+
+\newboolean{showcomments}
+\setboolean{showcomments}{true}
+
+\ifthenelse{\boolean{showcomments}}
+{ \newcommand{\mynote}[2]{
+    \fbox{\bfseries\sffamily\scriptsize#1}
+    {\small$\blacktriangleright$\textsf{\emph{#2}}$\blacktriangleleft$}}}
+{\newcommand{\mynote}[2]{}}
+
+\newcommand{\cdu}[1]{\mynote{Corentin}{#1}}
+\newcommand{\cd}[1]{\mynote{Charlotte}{#1}}
+\newcommand{\sfa}[1]{\mynote{Sabrine}{#1}}
+\newcommand{\todo}[1]{\mynote{TODO}{#1}}
+
+\makeatletter
+\let\@copyrightspace\relax
+\makeatother 
+
+\begin{document}
+
+\title{Deploying IoT in Africa: the Waziup story}
+
+\author{Authors\inst{2}}
+\institute{Easy Global Market
+Espace Beethoven
+1200 Route des lucioles
+06560 Valbonne, France\\
+\and
+Create-Net
+via Alla Cascata, 56/D
+38123 Trento, Italy\\
+\email{{charlotte.dupont,sabrine.fatnassi}@eglobalmark.com}
+\email{cdupont@create-net.org}
+}
+
+\date{\today}
+
+\maketitle
+
+\begin{abstract}
+\input{abstract}
+\end{abstract}
+
+\input{intro}
+\section{Low cost IoT for sensing infrastructure}
+
+\todo{Congduc}
+
+\section{Data analytics with Waziup platform}
+
+\todo{Corentin}
+
+\section{Securing the IoT platform}
+
+\todo{Mehdi: insert content from deliverable}
+
+\section{New market opportunities}
+
+\todo{Abdur: how we detect opportunities/talents through hackathons, local startups, NGOs (such as in Togo), financing etc.}
+
+
+
+%\input{platform}
+%\input{implem}
+%\input{deploy}
+%\input{usecases}
+\input{related}
+\input{conclu}
+\input{acknowledgement}
+
+\bibliographystyle{unsrt}
+\bibliography{central-bibliography/bibliography}
+
+\end{document}
