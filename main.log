@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.25)  5 JUL 2017 10:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.25)  5 JUL 2017 11:29
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -318,28 +318,37 @@ LaTeX Warning: Reference `sec:deploy' on page 3 undefined on input line 53.
 
 LaTeX Warning: Reference `sec:usecases' on page 3 undefined on input line 54.
 
-) (./lowcostiot.tex <figures/1-hop.pdf, id=19, 582.175pt x 366.36874pt>
+) (./lowcostiot.tex
+
+LaTeX Warning: Citation `semtech-test' on page 3 undefined on input line 5.
+
+
+LaTeX Warning: Citation `Libelium-lora-web' on page 3 undefined on input line 5
+.
+
+<figures/1-hop.pdf, id=19, 582.175pt x 366.36874pt>
 File: figures/1-hop.pdf Graphic file (type pdf)
+ <use figures/1-hop.pdf>
+Package pdftex.def Info: figures/1-hop.pdf used on input line 9.
+(pdftex.def)             Requested size: 208.27623pt x 131.06528pt.
 
-<use figures/1-hop.pdf>
-Package pdftex.def Info: figures/1-hop.pdf used on input line 7.
-(pdftex.def)             Requested size: 225.62817pt x 141.98877pt.
-
-<figures/generic-iot.pdf, id=20, 634.37pt x 511.9125pt>
+[3] <figures/generic-iot.pdf, id=24, 618.31pt x 311.1625pt>
 File: figures/generic-iot.pdf Graphic file (type pdf)
 
 <use figures/generic-iot.pdf>
-Package pdftex.def Info: figures/generic-iot.pdf used on input line 16.
-(pdftex.def)             Requested size: 225.62817pt x 182.06999pt.
+Package pdftex.def Info: figures/generic-iot.pdf used on input line 20.
+(pdftex.def)             Requested size: 260.34265pt x 131.01971pt.
 
-<figures/easy-integration.pdf, id=21, 679.53876pt x 379.4175pt>
+<figures/easy-integration.pdf, id=25, 630.355pt x 270.00874pt>
 File: figures/easy-integration.pdf Graphic file (type pdf)
 
 <use figures/easy-integration.pdf>
-Package pdftex.def Info: figures/easy-integration.pdf used on input line 23.
-(pdftex.def)             Requested size: 225.62817pt x 125.97815pt.
-) [3 <./figures/1-hop.pdf>] [4 <./figures/generic-iot.pdf> <./figures/easy-inte
-gration.pdf>] (./related.tex
+Package pdftex.def Info: figures/easy-integration.pdf used on input line 29.
+(pdftex.def)             Requested size: 277.69987pt x 118.95253pt.
+
+Underfull \vbox (badness 3302) has occurred while \output is active []
+
+ [4 <./figures/1-hop.pdf> <./figures/generic-iot.pdf>]) (./related.tex
 
 LaTeX Warning: Citation `Onyalo2015' on page 5 undefined on input line 14.
 
@@ -361,13 +370,13 @@ LaTeX Warning: Citation `ITU2015' on page 5 undefined on input line 20.
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
+[5 <./figures/easy-integration.pdf>]
 
-LaTeX Warning: Citation `Mafuta2013' on page 5 undefined on input line 23.
+LaTeX Warning: Citation `Mafuta2013' on page 6 undefined on input line 23.
 
 
-LaTeX Warning: Citation `Dlodlo2015' on page 5 undefined on input line 30.
+LaTeX Warning: Citation `Dlodlo2015' on page 6 undefined on input line 30.
 
-[5]
 
 LaTeX Warning: Citation `Bing2012' on page 6 undefined on input line 36.
 
@@ -389,19 +398,19 @@ LaTeX Warning: Citation `Sarkar2016' on page 6 undefined on input line 46.
 
 LaTeX Warning: Citation `Jayaraman2015' on page 6 undefined on input line 48.
 
-
-LaTeX Warning: Citation `Ilapakurti2015' on page 6 undefined on input line 50.
-
-
-LaTeX Warning: Citation `Han2014' on page 6 undefined on input line 55.
-
-
-LaTeX Warning: Citation `Hu2011' on page 6 undefined on input line 57.
-
-
-LaTeX Warning: Citation `Liu2014' on page 6 undefined on input line 57.
-
 [6]
+
+LaTeX Warning: Citation `Ilapakurti2015' on page 7 undefined on input line 50.
+
+
+LaTeX Warning: Citation `Han2014' on page 7 undefined on input line 55.
+
+
+LaTeX Warning: Citation `Hu2011' on page 7 undefined on input line 57.
+
+
+LaTeX Warning: Citation `Liu2014' on page 7 undefined on input line 57.
+
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
@@ -414,7 +423,7 @@ Missing character: There is no ú in font cmr10!
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
-
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 101--101
  [][]\OT1/cmr/m/n/9 http://blog.cloudera.com/blog/2014/11/flafka-apache-flume-m
 eets-apache-kafka-
@@ -426,32 +435,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 103--103
 xt-broker-orion-
  []
 
-[7]
+
+Underfull \vbox (badness 1028) has occurred while \output is active []
+
+ [8]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
- [8] [9]
+
+[9]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ¶ in font cmr10!
-) (./conclu.tex) (./acknowledgement.tex)
+) (./conclu.tex) (./acknowledgement.tex [10])
 No file main.bbl.
-[10] (./main.aux)
+[11] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2906 strings out of 493014
- 38465 string characters out of 6133351
- 110279 words of memory out of 5000000
- 6382 multiletter control sequences out of 15000+600000
+ 2909 strings out of 493014
+ 38515 string characters out of 6133351
+ 111279 words of memory out of 5000000
+ 6385 multiletter control sequences out of 15000+600000
  12031 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,9n,26p,406b,233s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,9n,26p,1296b,229s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
@@ -465,10 +478,10 @@ exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/te
 xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/tex
 live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texli
 ve/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (10 pages, 4361403 bytes).
+Output written on main.pdf (11 pages, 4335905 bytes).
 PDF statistics:
- 346 PDF objects out of 1000 (max. 8388607)
- 213 compressed objects within 3 object streams
+ 337 PDF objects out of 1000 (max. 8388607)
+ 208 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
