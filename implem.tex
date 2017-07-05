@@ -1,98 +1,48 @@
 
-\section{Implementation}
-\label{sec:implem}
+\section{Data analytics with Waziup platform}
 
+\begin{figure}[htb]  
+\centering  
+\includegraphics[width=.6\linewidth]{figures/implem}   
+\caption{Cloud platform implementation}
+\label{fig-implem}  
+\end{figure} 
+
+The Figure~\ref{fig-implem} presents the implementation of the Waziup platform stack.
+The role of each component is presented, together with the technology selected in parenthesis.
+The Waziup platform uses three distinct Cloud layers (in blue in the picture):
+\begin{enumerate}
+  \item “Infrastructure as a Service” (IaaS),    
+  \item “Container as a Service” (CaaS),    
+  \item and finally “Platform as a Service” (PaaS).     
+\end{enumerate}
+
+The first layer is provided by OpenStack.
+Its main role is to provide Virtual Machines (VMs), in which we run the full platform.
+This layer is fundamental because most of Cloud vendors (Amazon, Rackspace…) use VMs as basic selling units.
+The second layer is provided by Kubernetes.
+The role of this layer is to provide containers, such as Docker containers.
+These containers provide light-weight and ultra-fast virtualization for applications and micro-services.
+The containers themselves are running inside the VMs.
+The third and final Cloud layer is provided by Deis.
+It provides services to developers, such as compiling and deploying an application.
+All the applications pushed by the users will be compiled with Deis and hosted in containers on Kubernetes.
+
+To access the platform, the users and external components need to go through the API server.
+The API server exposes a common API for all the services of the Waziup platform.
+Each of the endpoints of the API server is secured with Keycloak.
+
+Keycloak provides both Authentication and Authorization management.
+For instance, when accessing the dashboard, the user need to provide a username and password.
+This is provided by Keycloak authentication layer.
+Furthermore, through the dashboard and APIs the user can access only sensors that are authorized for him.
+This is enforced by Keycloak authorization layer.
+
+Mobile phones are used to interfaces with the SMS and voice commands component.
+This component allows Waziup applications to send SMS and voice notifications to the users.
+The Gateway pushes sensors' data to the data broker, which is FIWARE Orion.
+The data is distributed to the applications requesting it.
+Orion also interfaces with the database and the data processing (Elastic Search), for historical data analysis.
 In this section we will present WAZIUP platform components and the technology and tools selected for each component.
 
-\subsection{Platform components}
-Here is a detailed view of WAZIUP platform components:
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth]{figs/platformOverview.png}
-\caption{WAZIUP IoT platform overview}
-\label{fig:platformOverview}
-\end{figure}
-
-The figure~\ref{fig:platformOverview} presents the full WAZIUP architecture. 
-There are 4 silos (from left to right): Application development, big data platform, IoT platform, Sensors and data sources. 
-The first silo involves the development of the application itself. 
-A rapid application development (RAD) tool can be used, such as Node-Red. 
-The user provides the code source of the application, together with the manifest. 
-The manifest describes the requirements of the application in terms of:
-\begin{itemize}
-	\item \emph{Compute needs (i.e RAM, CPU, disk)}
-	\item \emph{reference to data sources (e.g. sensors, internet sources)}
-	\item \emph{big data engines needed (e.g Flink, Hadoop)}
-	\item \emph{configuration of sensors (e.g. sampling rate)}
-	\item \emph{local and global application deployment}
-\end{itemize}
-
-The application source code, together with the manifest, is pushed to the Waziup Cloud platform by the user. 
-The orchestrator component will read the manifest and trigger the compilation of the application. 
-It will then deploy the application in the Cloud execution environment. 
-It will also instantiate the services needed by the application, as described in the manifest. 
-The last task of the orchestrator is to request the sensor and data sources connections from the IoT components of the architecture. 
-The sensor discovery module will be in charge of retrieving a list of sensors that matches the manifest description.
-On the left side of the diagram, the sensor owners can register their sensors with the platform. 
-External data sources such as Internet APIs can also be connected directly to the data broker. 
-The sensors selected for each application will deliver their data to the data broker, through the IoT bridge and preprocessor. 
-The IoT bridge is responsible on the senors communication, it receives and transmits data to sensors using its specific protocol. 
-The pre-process can apply transformation of the received data. 
-Since internet connectivity is intermittenet, local storage and local automated rules are need. 
-The automation rules component is responsible on executing local predefined rules and the storage manager is responsible on storing historic data.
-
-\subsection{Sequence diagrams}
-In this section the main two more important sequence diagrams are presented. 
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth]{figs/SeqdeployApp.png}
-\caption{Application deployment sequence diagram}
-\label{fig:SeqdeployApp}
-\end{figure}
-
-The Figure~\ref{fig:SeqdeployApp} shows the sequence of an application deployment on Waziup platform.
-First, the developer uses the RAD to create a program source code. It is then pushed on Waziup platform using Waziup CLI.
-The Orchestrator of the Cloud instance read the manifest, compiles the application and deploys it in the Cloud execution environment.
-Using the information from the manifest and the gateway manager, it will also select the gateways where the application needs to be deployed.
-It will then contact the orchestrator from the corresponding gateways and ask them to deploy the application.
-If the gateway is not available at the moment, this action is delayed.
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth]{figs/seqRunApp.png}
-\caption{Application run sequence diagram}
-\label{fig:seqRunApp}
-\end{figure}
-
-The Figure ~\ref{fig:seqRunApp} shows the sequence followed by a running application. First of all a user request the access to an application to the user manager, using his login and password. If granted, the User manager will forward the request to the execution environment which gives access to the app. The app is then getting its data from the Cloud Storage manager. It is further pushing the data to the data analytics component in order to get the elaboration. This elaborated data is then sent to the UI manager, in order to be displayed to the user.
-
-\subsection{Technology and tools}
-
-In this section the technology choices for each functional component stated above will be presented.
-\emph{ In the cloud level,} functional components are the data broker, data registry and data discovery.
-To cover these functionalities, The FIWARE generic enabler Orion context broker is the all-in-one solution.
-It is based on the Next Generic Service Interfaces (NGSI) 9/10.
-NGSI specification defines a data model and interfaces to manage the whole cycle of virtual entities.  
-other components can also be an option : the Nec IoT broker that covers the functionality of the data broker and uses the ConfMan component for the data discovery and registry.
-\emph{In the gateway level,} these functionalities have been identified:
-
-\begin{itemize}
-    \item \emph{Multiprotocol:}
-The FIWARE IoT agent component: can be an option to ensure this characteristic. 
-Each IoT agent can be responsible on the data transfer to and from the devices using the device specific protocol. 
-    \item \emph{Device management:}
-The LwM2M device management protocol is a good candidate, it is a light weight protocol specified by Oma .
-    \item \emph{Automation rules:}
-FIWARE Cepheus enabler can be an option since it has a complex event processing engine. 
-    \item \emph{Data processing:}
-this component will be developed depending on use cases requirements.
-    \item \emph{Data storage:}
-Mongo DB can be an option, other light data bases can be also considered such as SQLiteDB.
-\end{itemize}
-
-\emph{In the devices and networking level,} LoRa technology captured our attention. 
-It specifies LoRaWAN for Low Power Wide Area Network (LPWAN), the kind of technology needed in our project context (rural environment). 
-Using LoRaWAN we can reach above 20 km in Line-Of-Sight (LOS) condition between devices and the gateway. 
 
