@@ -1,0 +1,79 @@
+\section{Securing the IoT platform}
+IoT security has several dimensions; one is from communication between IoT devices and software platform, the other side is related to the whole software platform managing data, and services.
+
+\subsection{Hardware and Software Security}
+In a large scale IoT platform, that consists of local and global clouds, providing security is a challenge. A local cloud is connected to one or several IoT gateways that are close to local cloud. 
+An IoT gateway is a wireless based on 4G/3G communications, so we cannot build a local/private network space with Local Cloud even. Somehow we need to have a public endpoint to access Orion from the Internet. Therefore, even in local cloud model we need a public endpoint. Even in local cloud model, we need a public IP or the IoT gateway would have to be in the local network.
+In our platform, global cloud provides the main data broker (global Orion context broker) which receives data from distributed IoT gateways. IoT gateway communications with global Orion need to pass through the Internet. If Orion is exposed to the outside world using a public IP address of platform, then all access to Orion have to be controled in such a way to allow only authorized accesses, and deny non-authorized ones.
+One way to provide security for such a communication is to use FIREWALL, and allow IP addresses of IoT gateways to be able to access Orion endpoint (e.g. public IP of platform: Orion Port). And then, deny all other accesses to Orion. Since we know that which IoT gateways are connected, or would like to connect to our platform this is a solution. At the end, we are enforcing access control to Orion by design with this solution. However, one issue can come from gateway with Internet access through a 3G dongle where the IP address is not always the same, and it may change. 
+
+Generally, we can distinguish two scenarios for local cloud:
+
+1) Connected with limited bandwidth (typically charged by transmitted data): Here we use local cloud to optimize for data usage because connecting to internet is expensive and slow. Data are transferred to local cloud from internet, but that's low amount compared to what would be needed to access the dashboard remotely. Here the local cloud need a public IP or we will have to implement a method to circumvent NATs. This would mean the local cloud periodically pull the data from global cloud with static public IP or it keeps an open connection to a cloud with static public IP. Data go from the IoT gateway to the global cloud and from there to the local cloud.
+
+2) Disconnected IoT gateway: In this case, the gateway must be connected with some local communication means (e.g. wifi, ethernet or LoRA) to the local network of the local cloud.
+
+Therefore, it is important to have a co-design from hardware and software experts in place in order to address different scenarios.
+
+Relying on IP address is not really good in some cases. There is another way in which we can rely in defining gateway id, and accepting only upload from registered gateways. It is easy to add a field in the message, to have the gateway id; thus, we can define access policies based on registered Gateway ids.  For that, at platform, we need to receive the message, decode it and see if it is from a registered gateway id let the communication happen. For this case,  Gateway ID plus secure token sounds good for simple security. Alternatively, we could go for certificates. This would go nicely with securing the communication to go over SSL. To be sufficiently secure, we should communicate over HTTPS and use certificates. Since an IoT gateway is a linux machine, we can certainly do the certificates and HTTPS.
+This would mean that we have our own CA. From this, we would generate certificates for the Orion and the gateway. Then we would setup both the parties to require that the opposite party presents a certificate signed by the CA.
+
+This would have to benefits:
+1) proper authentication
+2) securing data during transport
+
+\subsection{Software Platform Security and Access Control}
+
+Authentication is the first requirement in implementing security. Users should be first identified by WAZIUP platform, then they can request access to different resources; that we call this step as authorization.
+
+The access to different WAZIUP services is performed performed by the WAZIUP APIs server. The APIs servers acts as a gateway placed in the demilitarized zone between the internet and the internal network with WAZIUP services. WAZIUP APIs server provides public endpoints for the internally hosted services and proxies to them. 
+WAZIUP APIs server takes care of the authentication and authorization of incoming requests from internet. The authentication is performed with the help of Keycloak server. The authorization is done by the WAZIUP APIs server directly.
+Depending on whether a services is accessed in an interactive manner (from the web-browser) or in a programmatic manner (directly from another service), WAZIUP APIs server provides to basic flows:
+Authentication for interactive use (e.g. from a Dashboard web client):
+A user accesses a page (e.g. through a Dashboard web client). The browser sends a request to the APIs server.
+The server finds out that client has not authenticated yet and redirects the client’s browser to a login screen provided by Keycloak
+User enters his/her credentials.
+Keycloak validates the credentials, sends a request to APIs server notifying it that the user is authenticated and redirects user’s web-browser back to the original page.
+When the WAZIUP APIs serves the web page now, it creates a session for the user and includes the access token to the session. The response to the client then includes a cookie with the session id.
+Any subsequent request by the user includes the session id, which enables the WAZIUP APIs server to lookup the access token and validate the access.
+Authentication for programmatic use (e.g. from a sensor gateway):
+A user generates (typically through some web-based client) an offline access refresh token. The token is given to a device (e.g. the sensor gateway) as a configuration parameter.
+When the device wants to make a request, it contacts Keycloak and requests an access token to be generated based on the refresh token.
+Keycloak server provides an access token. (As opposed to the refresh token, the access token has rather limited duration of validity - typically in order of minutes.)
+The device makes a request to a service endpoint (on the WAZIUP APIs server). As part of the request, it includes the following header (where access_token is to be replaced by the actual access token received from Keycloak):
+Authorization: bearer ACCESS_TOKEN
+Once the authentication is successful completed, the APIs server uses the access token to validate if the user/device has access to a particular resource.
+For the sake of the authorization, every user has an attribute “permissions” (this is maintained by Keycloak). The attribute permissions attaches the the role of the user (admin, advisor or farmer) to resources (sensors, etc.) under a particular service path in Orion. 
+
+The access to different WAZIUP services is performed by the WAZIUP APIs server. The APIs servers acts as a gateway placed in the demilitarized zone between the internet and the internal network with WAZIUP services. WAZIUP APIs server provides public endpoints for the internally hosted services and proxies to them. 
+WAZIUP APIs server takes care of the authentication and authorization of incoming requests from internet. The authentication is performed with the help of Keycloak server. The authorization is done by the WAZIUP APIs server directly.
+Depending on whether a services is accessed in an interactive manner (from the web-browser) or in a programmatic manner (directly from another service), WAZIUP APIs server provides to basic flows:
+Authentication for interactive use (e.g. from a Dashboard web client):
+A user accesses a page (e.g. through a Dashboard web client). The browser sends a request to the APIs server.
+The server finds out that client has not authenticated yet and redirects the client’s browser to a login screen provided by Keycloak
+User enters his/her credentials.
+Keycloak validates the credentials, sends a request to APIs server notifying it that the user is authenticated and redirects user’s web-browser back to the original page.
+When the WAZIUP APIs serves the web page now, it creates a session for the user and includes the access token to the session. The response to the client then includes a cookie with the session id.
+Any subsequent request by the user includes the session id, which enables the WAZIUP APIs server to lookup the access token and validate the access.
+Authentication for programmatic use (e.g. from a sensor gateway):
+A user generates (typically through some web-based client) an offline access refresh token. The token is given to a device (e.g. the sensor gateway) as a configuration parameter.
+When the device wants to make a request, it contacts Keycloak and requests an access token to be generated based on the refresh token.
+Keycloak server provides an access token. (As opposed to the refresh token, the access token has rather limited duration of validity - typically in order of minutes.)
+The device makes a request to a service endpoint (on the WAZIUP APIs server). As part of the request, it includes the following header (where access_token is to be replaced by the actual access token received from Keycloak):
+Authorization: bearer ACCESS_TOKEN
+Once the authentication is successful completed, the APIs server uses the access token to validate if the user/device has access to a particular resource.
+For the sake of the authorization, every user has an attribute “permissions” (this is maintained by Keycloak). The attribute permissions attaches the the role of the user (admin, advisor or farmer) to resources (sensors, etc.) under a particular service path in Orion.
+
+In the context of KeyCloak, realm defines a domain in which things within that realm can act. For example, users within a realm are not able to access resources within other realms. Each realm has its own elements such as users, roles, clients, etc. Users are valid users that have been defined either by administrator or by a user itself through self-subscription, and they are valid entities of a realm to access applications as it is defined by clients. A client defines a 
+Clients are entities that can request authentication of a user. Clients come in two forms. The first type of client is an application that wants to participate in single-sign-on. These clients just want Keycloak to provide security for them. The other type of client is one that is requesting an access token so that it can invoke other services on behalf of the authenticated user. 
+OpenID Connect is the preferred protocol to secure applications. It was designed from the ground up to be web friendly and work best with HTML5/JavaScript applications.
+Roles identify a type or category of user. Admin, user, manager, and employee are all typical roles that may exist in an organization. Applications often assign access and permissions to specific roles rather than individual users as dealing with users can be too fine grained and hard to manage. For example, the Admin Console has specific roles which give permission to users to access parts of the Admin Console UI and perform certain actions. There is a global namespace for roles and each client also has its own dedicated namespace where roles can be defined.
+Realm-level roles are a global namespace to define your roles. You can see the list of built-in and created roles by clicking the Roles left menu item.
+Client roles are basically a namespace dedicated to a client. Each client gets its own namespace. Client roles are managed under the Roles tab under each individual client. You interact with this UI the same way you do for realm-level roles.
+
+Offline access is a feature described in OpenID Connect specification . The idea is that during login, your client application will request an Offline token instead of a classic Refresh token. The application can save this offline token in a database or on disk and can use it later even if user is logged out. This is useful if your application needs to do some "offline" actions on behalf of user even when the user is not online. An example is a periodic backup of some data every night. In our case, gateway tokens are of offline type.
+
+Your application is responsible for persisting the offline token in some storage (usually a database) and then using it to manually retrieve new access token from Keycloak server.
+The difference between a classic Refresh token and an Offline token is, that an offline token will never expire and is not subject of SSO Session Idle timeout . The offline token is valid even after a user logout or server restart. However by default you do need to use the offline token for a refresh token action at least once per 30 days (this value, Offline Session Idle timeout, can be changed in the administration console in the Tokens tab under Realm Settings). Also if you enable the option Revoke refresh tokens, then each offline token can be used just once. So after refresh, you always need to store the new offline token from refresh response into your DB instead of the previous one.
+
+Users can view and revoke offline tokens that have been granted by them in the User Account Service. The admin user can revoke offline tokens for individual users in admin console in the Consents tab of a particular user. The admin can also view all the offline tokens issued in the Offline Access tab of each client.
