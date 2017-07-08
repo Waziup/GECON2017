@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.1.12)  8 JUL 2017 10:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.1.12)  8 JUL 2017 10:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -319,16 +319,7 @@ LaTeX Warning: Reference `sec:deploy' on page 3 undefined on input line 53.
 
 LaTeX Warning: Reference `sec:usecases' on page 3 undefined on input line 54.
 
-
-LaTeX Warning: Reference `sec:relworks' on page 3 undefined on input line 55.
-
-
-LaTeX Warning: Reference `sec:conclu' on page 3 undefined on input line 56.
-
 ) (./lowcostiot.tex
-
-LaTeX Warning: Reference `figure-1hop' on page 3 undefined on input line 5.
-
 
 LaTeX Warning: Citation `semtech-test' on page 3 undefined on input line 5.
 
@@ -342,10 +333,6 @@ File: figures/1-hop.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/1-hop.pdf used on input line 9.
 (pdftex.def)             Requested size: 208.27623pt x 131.06528pt.
 
-
-LaTeX Warning: Reference `figure-generic-iot' on page 3 undefined on input line
- 16.
-
 [3] <figures/generic-iot.pdf, id=24, 618.31pt x 311.1625pt>
 File: figures/generic-iot.pdf Graphic file (type pdf)
 
@@ -353,9 +340,163 @@ File: figures/generic-iot.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/generic-iot.pdf used on input line 20.
 (pdftex.def)             Requested size: 260.34265pt x 131.01971pt.
 
-
-LaTeX Warning: Reference `figure-easy-integration' on page 4 undefined on input
- line 25.
-
 <figures/easy-integration.pdf, id=25, 630.355pt x 270.00874pt>
-File: figures/easy-integration.pdf Graphic f
+File: figures/easy-integration.pdf Graphic file (type pdf)
+
+<use figures/easy-integration.pdf>
+Package pdftex.def Info: figures/easy-integration.pdf used on input line 29.
+(pdftex.def)             Requested size: 277.69987pt x 118.95253pt.
+
+Underfull \vbox (badness 3302) has occurred while \output is active []
+
+ [4 <./figures/1-hop.pdf> <./figures/generic-iot.pdf>]) (./implem.tex
+<figures/implem.png, id=242, 259.1865pt x 243.4185pt>
+File: figures/implem.png Graphic file (type png)
+ <use figures/implem.png>
+Package pdftex.def Info: figures/implem.png used on input line 6.
+(pdftex.def)             Requested size: 208.27623pt x 195.61533pt.
+
+[5 <./figures/easy-integration.pdf> <./figures/implem.png>]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ¶ in font cmr10!
+) (./security.tex
+[6]
+Overfull \hbox (2.43271pt too wide) in paragraph at lines 12--13
+[]\OT1/cmr/m/n/10 1) Con-nected with lim-ited band-width (typ-i-cally charged b
+y trans-mit-ted data):
+ []
+
+
+Underfull \vbox (badness 1102) has occurred while \output is active []
+
+ [7]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+
+[8]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9])
+(./related.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+[11] [12]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ¶ in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--99
+ [][]\OT1/cmr/m/n/9 http://blog.cloudera.com/blog/2014/11/flafka-apache-flume-m
+eets-apache-kafka-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+ [][]\OT1/cmr/m/n/9 http://catalogue.fiware.org/enablers/publishsubscribe-conte
+xt-broker-orion-
+ []
+
+[13]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ [14]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ¶ in font cmr10!
+) (./conclu.tex) (./acknowledgement.tex [15]) (./main.bbl [16])
+[17] (./main.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2925 strings out of 494910
+ 38306 string characters out of 6179836
+ 107703 words of memory out of 5000000
+ 6142 multiletter control sequences out of 15000+600000
+ 12376 words of font info for 47 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 37i,9n,26p,1292b,238s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmssi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+ti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on main.pdf (17 pages, 4482225 bytes).
+PDF statistics:
+ 363 PDF objects out of 1000 (max. 8388607)
+ 225 compressed objects within 3 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+

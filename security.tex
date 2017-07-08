@@ -40,8 +40,8 @@ Authentication for programmatic use (e.g. from a sensor gateway):
 A user generates (typically through some web-based client) an offline access refresh token. The token is given to a device (e.g. the sensor gateway) as a configuration parameter.
 When the device wants to make a request, it contacts Keycloak and requests an access token to be generated based on the refresh token.
 Keycloak server provides an access token. (As opposed to the refresh token, the access token has rather limited duration of validity - typically in order of minutes.)
-The device makes a request to a service endpoint (on the WAZIUP APIs server). As part of the request, it includes the following header (where access_token is to be replaced by the actual access token received from Keycloak):
-Authorization: bearer ACCESS_TOKEN
+The device makes a request to a service endpoint (on the WAZIUP APIs server). As part of the request, it includes the following header (where access\_token is to be replaced by the actual access token received from Keycloak):
+Authorization: bearer ACCESS\_TOKEN
 Once the authentication is successful completed, the APIs server uses the access token to validate if the user/device has access to a particular resource.
 For the sake of the authorization, every user has an attribute “permissions” (this is maintained by Keycloak). The attribute permissions attaches the the role of the user (admin, advisor or farmer) to resources (sensors, etc.) under a particular service path in Orion. 
 
@@ -59,8 +59,8 @@ Authentication for programmatic use (e.g. from a sensor gateway):
 A user generates (typically through some web-based client) an offline access refresh token. The token is given to a device (e.g. the sensor gateway) as a configuration parameter.
 When the device wants to make a request, it contacts Keycloak and requests an access token to be generated based on the refresh token.
 Keycloak server provides an access token. (As opposed to the refresh token, the access token has rather limited duration of validity - typically in order of minutes.)
-The device makes a request to a service endpoint (on the WAZIUP APIs server). As part of the request, it includes the following header (where access_token is to be replaced by the actual access token received from Keycloak):
-Authorization: bearer ACCESS_TOKEN
+The device makes a request to a service endpoint (on the WAZIUP APIs server). As part of the request, it includes the following header (where access\_token is to be replaced by the actual access token received from Keycloak):
+Authorization: bearer ACCESS\_TOKEN
 Once the authentication is successful completed, the APIs server uses the access token to validate if the user/device has access to a particular resource.
 For the sake of the authorization, every user has an attribute “permissions” (this is maintained by Keycloak). The attribute permissions attaches the the role of the user (admin, advisor or farmer) to resources (sensors, etc.) under a particular service path in Orion.
 
