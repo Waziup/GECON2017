@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.1.12)  7 JUL 2017 13:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.1.12)  8 JUL 2017 10:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -319,7 +319,16 @@ LaTeX Warning: Reference `sec:deploy' on page 3 undefined on input line 53.
 
 LaTeX Warning: Reference `sec:usecases' on page 3 undefined on input line 54.
 
+
+LaTeX Warning: Reference `sec:relworks' on page 3 undefined on input line 55.
+
+
+LaTeX Warning: Reference `sec:conclu' on page 3 undefined on input line 56.
+
 ) (./lowcostiot.tex
+
+LaTeX Warning: Reference `figure-1hop' on page 3 undefined on input line 5.
+
 
 LaTeX Warning: Citation `semtech-test' on page 3 undefined on input line 5.
 
@@ -333,6 +342,10 @@ File: figures/1-hop.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/1-hop.pdf used on input line 9.
 (pdftex.def)             Requested size: 208.27623pt x 131.06528pt.
 
+
+LaTeX Warning: Reference `figure-generic-iot' on page 3 undefined on input line
+ 16.
+
 [3] <figures/generic-iot.pdf, id=24, 618.31pt x 311.1625pt>
 File: figures/generic-iot.pdf Graphic file (type pdf)
 
@@ -340,17 +353,9 @@ File: figures/generic-iot.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/generic-iot.pdf used on input line 20.
 (pdftex.def)             Requested size: 260.34265pt x 131.01971pt.
 
+
+LaTeX Warning: Reference `figure-easy-integration' on page 4 undefined on input
+ line 25.
+
 <figures/easy-integration.pdf, id=25, 630.355pt x 270.00874pt>
-File: figures/easy-integration.pdf Graphic file (type pdf)
-
-<use figures/easy-integration.pdf>
-Package pdftex.def Info: figures/easy-integration.pdf used on input line 29.
-(pdftex.def)             Requested size: 277.69987pt x 118.95253pt.
-
-Underfull \vbox (badness 3302) has occurred while \output is active []
-
- [4 <./figures/1-hop.pdf> <./figures/generic-iot.pdf>]) (./implem.tex
-
-! LaTeX Error: File `figures/implem' not found.
-
-See the LaTeX manual or La
+File: figures/easy-integration.pdf Graphic f
