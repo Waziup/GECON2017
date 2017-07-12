@@ -1,6 +1,8 @@
 \section{Securing the IoT platform}
 IoT security has several dimensions; one is from communication between IoT devices and software platform, the other side is related to the whole software platform managing data, and services.
 
+All these services will not provide any Ingress to outside. Server API can communicate with all Kubernetes internal services. And can respond to Client queries about different services. So Server API will act as a proxy to provide security.
+
 \subsection{Hardware and Software Security}
 In a large scale IoT platform, that consists of local and global clouds, providing security is a challenge. A local cloud is connected to one or several IoT gateways that are close to local cloud. 
 An IoT gateway is a wireless based on 4G/3G communications, so we cannot build a local/private network space with Local Cloud even. Somehow we need to have a public endpoint to access Orion from the Internet. Therefore, even in local cloud model we need a public endpoint. Even in local cloud model, we need a public IP or the IoT gateway would have to be in the local network.
@@ -23,8 +25,6 @@ This would have to benefits:
 2) securing data during transport
 
 \subsection{Software Platform Security and Access Control}
-
-Authentication is the first requirement in implementing security. Users should be first identified by WAZIUP platform, then they can request access to different resources; that we call this step as authorization.
 
 The access to different WAZIUP services is performed performed by the WAZIUP APIs server. The APIs servers acts as a gateway placed in the demilitarized zone between the internet and the internal network with WAZIUP services. WAZIUP APIs server provides public endpoints for the internally hosted services and proxies to them. 
 WAZIUP APIs server takes care of the authentication and authorization of incoming requests from internet. The authentication is performed with the help of Keycloak server. The authorization is done by the WAZIUP APIs server directly.
