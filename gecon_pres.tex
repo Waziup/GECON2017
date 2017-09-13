@@ -40,176 +40,208 @@
 \begin{frame}
 \frametitle{Introduction}
   
-  Current IoT deployments rely heavily on the Cloud... \\
-  However, this architecture pose several problems:
-  \begin{itemize}
-    \item high stress on network and edge infrastructure,
-    \item privacy and data ownership,
-    \item rural and offshore contexts not well supported.
-  \end{itemize}
+While developed countries are discussing about massive deployment of IoT, developing countries are still far from being ready to enjoy the full benefit of IoT.
+
+  \begin{figure}[H]  
+  \centering  
+  \includegraphics[width=.6\linewidth]{figures/AfricaICTApp}  
+  \caption{Some ICT fields of IoT opportunities in rural environments}   
+  \label{figure-AfricaICTApp}  
+  \end{figure}
 
 \end{frame}
 
 \begin{frame}
 \frametitle{Introduction}
   
-  Fog computing brings new solutions for IoT.
-  Examples of containerized IoT functions:
+  Difficulties of deployements in Africa:
   \begin{itemize}
-    \item data stream analysis
-    \item prediction and recommendations
-    \item data privacy and anonymisation
+    \item lack of infrastructure, 
+    \item high cost of hardware
+    \item complexity in deployment, 
+    \item lack of technological background
   \end{itemize}
 
-\end{frame}
-
-\subsection{Overview and contribution}
-
-\begin{frame}
-\frametitle{Overview}
- 
-\end{frame}
-
-\begin{frame}
-\frametitle{Contributions}
- 
-  \emph{Cloud4IoT}: a platform able to containerize IoT functions and optimize their placement.
+  IoT deployment must address:
   \begin{itemize}
-    \item deployment of containerized IoT functions on the IoT gateway,
-    \item horizontal migration (roaming) of IoT functions,
-    \item vertical migration (offloading) of IoT functions.
-  \end{itemize}
-
-\end{frame}
-
-\section{State of art}
-
-\begin{frame}
-\frametitle{Related works}
-
- 
-Characteristics of Fog computing for the Internet of Things (\cite{Bonomi}, \cite{Mulfari2016}):
-  \begin{itemize}
-    \item low latency,
-    \item the location awareness,
-    \item widespread geographical distribution of nodes.
+    \item Longer range for rural access
+    \item Cost of hardware and services
+    \item Limit dependancy to proprietary infrastructures
+    \item Provide local interaction models
   \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Related works}
-
-Containers are particularly indicated for edge computing (\cite{morabito2017, ismail2015}):
-  \begin{itemize}
-    \item portability,
-    \item short start-up time: < 50ms,
-    \item small RAM and HD footprint (no kernel redundancy),
-    \item app perf on par with native app on Raspberry PI.
-  \end{itemize}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Related works}
-
-Cluster management for Edge computing (\cite{pahl2015}):
-  \begin{itemize}
-    \item Kubernetes
-    \item Mesos
-  \end{itemize}
-
-Extension of the paper~\cite{pizzolli2016}, with IoT perspective.
-  \begin{itemize}
-    \item implementation
-    \item IoT use cases
-    \item related works
-    \item future works
-  \end{itemize}
-
-\end{frame}
-
-
-
-\section{Implementation}
-
-\subsection{IoT function migration}
-
-\begin{frame}
-\frametitle{IoT roaming}
- 
-\end{frame}
-
-
-
-\begin{frame}
-\frametitle{Discovery and container creation}
-
-  \begin{itemize}
-  \item BLE discovers the sensor tag,
-  \item orchestrator is notified,
-  \item orchestrator deploys the container,
-  \item container image is pulled from the Cloud (if not already present on the Gateway),
-  \item container is created/attached/connected,
-  \item container starts,
-  \item first data point is received in the application container.
-  \end{itemize}
-    
-\end{frame}
-
-\begin{frame}
-\frametitle{Loss of connection and container destruction}
-
-  \begin{itemize}
-    \item BLE detects the loss of connection,
-    \item ochestrator is notified,
-    \item ochestrator undeploys the container,
-    \item container is destroyed.
-  \end{itemize}
-    
-\end{frame}
-
-\subsection{IoT offloading}
-
-\begin{frame}
-\frametitle{IoT offloading}
-
- 
-\end{frame}
-
-
-\section{Use cases}
-
-\subsection{IoT roaming for health care}
-
-\begin{frame}
-\frametitle{IoT roaming for health care}
-
-  Doctor receives notifications from patient's smart bracelet.
-  \begin{itemize}
-    \item the patient leaves his/her home and reaches the hospital
-    \item the wearable device is automatically associated with a new gateway 
-    \item monitoring service is configured accordingly.
-  \end{itemize}
-
-The wearables produce data using the open mhealth standard\footnote{http://www.openmhealth.org/}.
-    
-\end{frame}
-
-\subsection{IoT offloading for remote engine diagnostic}
-
-\begin{frame}
-\frametitle{IoT offloading for remote engine diagnostic}
+\frametitle{Our contribution}
   
-  Manufacturing companies deploy continuous and remote monitoring of mechanical engines.
-  \begin{itemize}
-    \item Diagnostic algorithms run in the gateway during critical phases (test and deployment)
-    \item Diagnostic can be pushed back in the Cloud for less critical operations
-  \end{itemize}
+
+\end{frame}
+
+\section{Entering the IoT era}
+
+\begin{frame}
+\frametitle{IoT connectivity made easy}
+ 
+\begin{figure}[H]  
+\centering  
+\includegraphics[width=.55\linewidth]{figures/1-hop}   
+\caption{Extreme long-range application with new radio technologies}   
+\label{figure-1hop}  
+\end{figure} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Low-cost DIY IoT hardware}
+ 
+  \begin{figure}[H]  
+  \centering  
+  \includegraphics[width=.7\linewidth]{figures/generic-iot}   
+  \caption{Generic low-cost IoT hardware}   
+  \label{figure-generic-iot}  
+  \end{figure} 
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Easy integration}
+
+  \begin{figure}[H] 
+  \centering  
+  \includegraphics[width=.8\linewidth]{figures/easy-integration}   
+  \caption{Easy integration with DIY approach for maximum appropriation}   
+  \label{figure-easy-integration}  
+  \end{figure} 
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Handling IoT data}
+
+  \begin{figure} 
+  \centering  
+  \includegraphics[width=.9\linewidth]{figures/GlobalArch}   
+  \caption{IoT platform architecture}   
+  \label{figure-globalarch}  
+  \end{figure} 
+  
+\end{frame}
+
+\section{Waziup IoT platform}
+
+\begin{frame}
+\frametitle{Architecture}
+
+  \begin{figure}[H] 
+  \centering  
+  \includegraphics[width=.7\linewidth]{figures/CloudServicesArchitecture.png}   
+  \caption{Global overview of WAZIUP Cloud platform, and services}
+  \label{fig-implem}  
+  \end{figure}
+
+  \begin{enumerate}
+    \item Infrastructure as a Service (IaaS),    
+    \item Container as a Service (CaaS),    
+    \item and finally Platform as a Service (PaaS).
+  \end{enumerate}
 
 \end{frame}
 
 
+\begin{frame}
+\frametitle{Implementation}
+ 
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Local and global Clouds}
+
+  \begin{figure}[H] 
+  \centering  
+  \includegraphics[width=.7\linewidth]{figures/localglobalcloud}   
+  \caption{Waziup local and global deployment}
+  \label{fig-localglobalcloud}  
+  \end{figure}
+    
+\end{frame}
+
+\begin{frame}
+\frametitle{Data management \& analytics}
+
+    
+\end{frame}
+
+\begin{frame}
+\frametitle{Application platform}
+
+  \begin{figure}[H]  
+  \centering  
+  \includegraphics[width=.68\linewidth]{figures/AppArchitecture.png}   
+  \caption{A global view of WAZIUP Application Template platform}
+  \label{fig-app}
+  \end{figure}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{Dashboard}
+
+  \begin{figure}[H]  
+  \centering  
+  \includegraphics[width=.73\linewidth]{figures/dashboard} 
+  \caption{A customized dashboard application for the soil moisture scenario}
+  \label{fig-dashboard}
+  \end{figure}
+  
+  \vspace{-1cm}
+  \begin{figure}[H]  
+  \centering  
+  \includegraphics[width=.73\linewidth]{figures/sensor-data}
+  \caption{Historical data from sensor device}
+  \label{fig-sensor-data}
+  \end{figure}
+ 
+\end{frame}
+
+\subsection{Service orchestration}
+
+
+\begin{frame}
+\frametitle{Service orchestration}
+
+\end{frame}
+
+\subsection{Security}
+
+\begin{frame}
+\frametitle{Platform security}
+  
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=.6\linewidth]{figures/ServicesArchitecture.png}
+  \caption{Detailed view of WAZIUP Cloud platform, and services architecture}
+  \label{fig-services}
+  \end{figure}
+
+  \begin{itemize}
+  \item Authentication for interactive use:
+  A user accesses a page (e.g. through a Dashboard web client).
+  The browser sends a request to the APIs server.
+  The server finds out that client has not authenticated yet and redirects the client's browser to a login screen provided by {\tt Keycloak}.
+  
+  
+  \item Authentication for programmatic use (e.g. from a sensor gateway):
+  A user generates (typically through some web-based client) an offline access refresh token.
+  The token is given to a device (e.g.
+  the sensor gateway) as a configuration parameter.
+  When the device wants to make a request, it contacts {\tt Keycloak} and requests an access token to be generated based on the refresh token.
+  
+  
+  \end{itemize}
+
+\end{frame}
 
 
 \section{Conclusion}
@@ -217,31 +249,23 @@ The wearables produce data using the open mhealth standard\footnote{http://www.o
 \begin{frame}
 \frametitle{Conclusion}
   
-  We presented:
+With ICT technologies, developing countries can dramatically improve its productivity by enabling the rapid and cost-effective deployment of advanced and real-time monitoring.
+However, deploying an IoT platform in developing countries comes with many challenges.
+Among them, the most important are supporting low cost, low power, low bandwidth, and intermittent Internet.
+
+We presented:
   \begin{itemize}
-    \item Architecture and implementation of a Fog Computing platform for IoT,
-    \item container migration horizontally and vertically,
-    \item central Cloud, an Edge and two raspberry PI Gateways,
-    \item 2 use cases: IoT roaming in health care context and IoT offloading for remote engine diagnostic.
+    \item Hardware
+    \item software Cloud platform 
   \end{itemize}
 
 \end{frame}
 
-\begin{frame}
-\frametitle{Future works}
-
-  \begin{itemize}
-    \item \emph{Infrastructure as Code} on edge devices such as Raspberry PIs.
-    \item tackle the many standards and protocols in different application domains.
-    \item security risks and shared devices
-  \end{itemize}
-
-\end{frame}
 
 \begin{frame}
 \frametitle{Acknowledgements}
 
-The author would like to thank the EU H2020 projects Waziup and Agile, and the Create-Net FBK research centre. \\
+The authors would like to thank the EU H2020 projects Waziup, and the Create-Net FBK research centre. \\
 
 \end{frame}
 
