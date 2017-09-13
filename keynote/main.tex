@@ -1,0 +1,132 @@
+\documentclass{llncs}
+
+\usepackage[nocompress]{cite}
+\usepackage[english]{babel}
+%\usepackage{minted}
+\usepackage{array}
+\usepackage{url}
+\usepackage{ifthen}
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+
+%common abbreviations
+\newcommand{\etal}{{\it et al.}}
+\newcommand{\etc}{{\it etc.}}
+\newcommand{\ie}{\emph{i.e.}}
+\newcommand{\eg}{{\em e.g.}}
+
+\newboolean{showcomments}
+\setboolean{showcomments}{true}
+
+\ifthenelse{\boolean{showcomments}}
+{ \newcommand{\mynote}[2]{
+    \fbox{\bfseries\sffamily\scriptsize#1}
+    {\small$\blacktriangleright$\textsf{\emph{#2}}$\blacktriangleleft$}}}
+{\newcommand{\mynote}[2]{}}
+
+\newcommand{\cdu}[1]{\mynote{Corentin}{#1}}
+\newcommand{\cd}[1]{\mynote{Charlotte}{#1}}
+\newcommand{\sfa}[1]{\mynote{Sabrine}{#1}}
+\newcommand{\todo}[1]{\mynote{TODO}{#1}}
+
+\makeatletter
+\let\@copyrightspace\relax
+\makeatother 
+
+\begin{document}
+
+\title{IoT and data analytic for developing countries from research to business transformation}
+
+\author{Abdur Rahim}		 
+
+\institute{FBK/Create-Net\\
+\email{arahim@fbk.eu}}
+
+
+\date{\today}
+
+\maketitle
+
+\begin{abstract}
+
+The Internet of Things (IoT) and data analytic is not just the story for the developed economic countries, but it is rather equality importance for developing nations especially in Africa.
+The IoT has the tremendous opportunity for the human and economical development.
+Together with IoT and big data data are driving improvements to human economic conditions and wellbeing in healthcare, water, agriculture, natural resource management, resiliency to climate change and energy.
+This talk will outline the experience from H2020 WAZIUP project, an IoT project for African and with African.
+Hence the talk will provide the IoT and data analytic movement prospective for the developing countries including the opportunity that offers to developing nations with a specific challenge.
+The talk also outlines the needs to exploit IoT potential and share IoT Technologies best-practices through the involvement of innovation communities and stakeholder (startup, developer, innovation Hub) from local district, regional, national and international-level.
+\end{abstract}
+
+Keywords: Africa, Internet of things, Ecosystem, Innovation, WAZIUP, Open Source
+
+\section{Specialized and African value-added IoT solutions}
+
+From our experience in WAZIUP project over the past few years, we have seen a lot of interests and early feedback on IoT from African communities and stakeholders.
+It is clear that the continent is getting ready to adapt IoT in their daily lives and business operations.
+At the same time, IoT activities are also increasing in different forms through local communities, IoT developer training by Swahili Box in Kenya, e-toll system in South Africa by SANRAL, Smart Africa’s Transform Africa summit and The Internet of Things Africa Summit and Smart Expo.
+Different stakeholders are getting involved in active IoT projects on the ground in Africa.
+These stakeholders include industry members, universities, NGOs, and tech start-ups, each contributing different strengths from capacity building to innovation.
+Big industries players with experience in IoT like IBM, SAP, Google, have established presence in Africa as well.
+
+From technical point of view, the IoT solutions developed by Industrial countries are either too generic or focusing only on industrial market needs.
+In Africa, there is a need for specialized solutions which addresses fundamental problems like internet and network connectivity, cost of solutions, power requirements, simplicity in terms of deployment and operation, robustness from environment threat, and user-centric design for notification (SMSs, voice, WhatsApp and Facebook) and interaction.
+
+Through our interaction with the average engineers and developers in Africa, they are often good in mobile and web application development but lack the experience, knowledge and capacity on the IoT core technology (e.g. data management, IoT backend, IoT connectivity, data analytic, etc.) to develop a competitive IoT solutions.
+They often require advanced training so they can develop these kind of solutions. 
+
+The internet connection is the major drawback.
+As a result, developers and engineers have to think of options for IoT without internet.
+For large-scale systems including hundreds of thousands of sensors, devices and/or readers, high reliability levels are likely to prove important.
+Cultural context on the ground also matters, and it should be taken into account, along with technical considerations.
+
+African engineer and entrepreneur need specialized IoT big data enterprise solutions including the development kit that are faster (to save the deployment time) and easy to deploy having a very basic IoT knowledge.
+These solutions have to be affordable in terms of cost, working with and without internet connection, and energy efficient.
+They need real-life testing environment (close to reality) with large-scale systems including hundreds of sensors.
+
+\section{IoT Made in Africa}
+
+
+One of the main sources of locally developed applications and innovation is the Techno hubs that are springing up across Africa.
+With the rise of Fablab, makerspace and tech hubs, young and talented Africans are now coming together to collaborate and to use open source tools to develop and prototype their ideas.  
+Most tech hub members start working on their ideas while in the University.
+The many of the idea and project start from university (student final year project).
+It is interesting to note that some of these ideas grow into start-ups once there is the conducive environment to nurture and support them.
+
+From our experience, one of the key features of the African digital innovation renaissance is that, it is increasingly homegrown.
+They have the vision to redesign the solutions which already exist in developed market, by Africans for the African market, providing homegrown cost-effective alternatives.
+In addition, entrepreneurs want to create solutions that are appropriate for their challenges and needs like Kenya’s seamless payment system, M-PESA and Brick.
+What is unfolding is a virtuoso system with a “started in Africa” mindset that could potentially remake what Africans buy.
+This is especially exciting because it empowers people to use their local expertise, know-how and hands-on skills to solve problems that exist in their daily lives.
+WOELAB is an example of such a Fablab in Lome, Togo (partner of WAZIUP) that inspires makers to use old and waste electronic part to create working products such as locally made 3D printers.
+
+The African need to create innovative applications and services homegrown “Made in Africa” like MPesa (from Kenya) that addresses the local problems and requirements.
+The continent needs more innovation and accelerator programs run by innovation hubs and tech hubs, engagement of young and talent entrepreneurs in the innovation process.
+
+\section{IoT local African ecosystem}
+While it is very early to assess the impact of African innovation, it is already clear that these makers and innovation hub offer a platform for a new economic system that taps into the brainpower of Africans to seed shared prosperity.The problems to solve in the continent are plentiful- clean water, energy, health, and food processing. In addition, there are significant challenges for the African makers, getting people to take them seriously including the government and even their competitor. Also, these hubs need more innovation business model and revenue generation steam. Hence the sustainable uptake of the results and innovation services within the countries became a major issue. This is valid of all innovation project, hub as well as start-up.
+Most of the African start-up teams cannot afford to pay someone to develop the competitive solutions for them.
+For African start-up one main challenges are the go-to-market, often these start-ups need small seed funding to grow and business and technical training.
+
+Most of the innovation projects have difficulties to sustain, since they often vanish after the project completion date.
+We also need to acknowledge that the sustainability is a long-term process.
+It often needs continuously (external aid) until reach the critical mass and viability, often additional funding, the need to develop and build on local talent, understanding the behavioral response of users and stakeholder ecosystem, innovation partnership, offer clear benefits to users.
+
+Maximizing the benefits of the IoT is likely to require more coordinated action across all sectors, SMEs and industries, telecom operator, ICT regulators, funding agencies, financial agencies, innovation stakeholders working closely with their counterparts in data protection and competition, but also with government and policy makers.
+Given the high pervasiveness of the IoT’s impact, it is vital that as more countries introduce policy frameworks, they take into account the various factors and implications of the IoT across different sectors.
+When all stakeholders are included in active dialogue, the IoT represents a promising opportunity for more coherent policy-making and implementation.
+IoT projects require to setup up innovation partnership and risk sharing business model; they also need a local IoT ecosystem at the same time connected with national and international/European IoT ecosystem.
+
+The African needs to create IoT ecosystem as local as possible with involvement of complement stakeholders and actors including the innovation stakeholders.
+Members of the ecosystem should complement each other giving opportunity for innovation partnership model (sharing the risks and benefits).
+The roles of ecosystem should be the sustainability of the technology and business.
+The project must look for sustainable business and economic model for the hub as well as support on the business model for the start-up.
+This is one of the key visions of the proposal to sustain the project results and hub.
+
+\section*{Acknowledgment}
+
+This talk has been produced in the context of the H2020 WAZIUP project.
+The WAZIUP project consortium would like to acknowledge that the research leading to these results has received funding from the European Union’s H2020 Research and Innovation Programme under the Grant Agreement H2020-ICT-687607.
+
+
+\end{document}
