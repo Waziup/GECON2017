@@ -1,0 +1,248 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{fixltx2e}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage[style=authoryear]{biblatex}
+
+\setbeamertemplate{bibliography item}{[\theenumiv]}
+
+\usetheme{Warsaw}
+
+\bibliography{central-bibliography/bibliography}
+
+\begin{document}
+
+
+\title{Low-cost IoT, Big Data, and Cloud Platform for Developing Countries}
+\author{Corentin Dupont, Tomas Bures, Mehdi Sheikhalishahi, Congduc Pham, Abdur Rahim}		 
+
+\institute{FBK/Create-Net\newline cdupont@fbk.eu}
+
+
+\maketitle
+
+\begin{frame}
+  \frametitle{Table of Contents}
+  \tableofcontents[]
+\end{frame}
+
+
+\section{Introduction}
+\begin{frame}
+\frametitle{Introduction}
+  
+  Current IoT deployments rely heavily on the Cloud... \\
+  However, this architecture pose several problems:
+  \begin{itemize}
+    \item high stress on network and edge infrastructure,
+    \item privacy and data ownership,
+    \item rural and offshore contexts not well supported.
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Introduction}
+  
+  Fog computing brings new solutions for IoT.
+  Examples of containerized IoT functions:
+  \begin{itemize}
+    \item data stream analysis
+    \item prediction and recommendations
+    \item data privacy and anonymisation
+  \end{itemize}
+
+\end{frame}
+
+\subsection{Overview and contribution}
+
+\begin{frame}
+\frametitle{Overview}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{Contributions}
+ 
+  \emph{Cloud4IoT}: a platform able to containerize IoT functions and optimize their placement.
+  \begin{itemize}
+    \item deployment of containerized IoT functions on the IoT gateway,
+    \item horizontal migration (roaming) of IoT functions,
+    \item vertical migration (offloading) of IoT functions.
+  \end{itemize}
+
+\end{frame}
+
+\section{State of art}
+
+\begin{frame}
+\frametitle{Related works}
+
+ 
+Characteristics of Fog computing for the Internet of Things (\cite{Bonomi}, \cite{Mulfari2016}):
+  \begin{itemize}
+    \item low latency,
+    \item the location awareness,
+    \item widespread geographical distribution of nodes.
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Related works}
+
+Containers are particularly indicated for edge computing (\cite{morabito2017, ismail2015}):
+  \begin{itemize}
+    \item portability,
+    \item short start-up time: < 50ms,
+    \item small RAM and HD footprint (no kernel redundancy),
+    \item app perf on par with native app on Raspberry PI.
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Related works}
+
+Cluster management for Edge computing (\cite{pahl2015}):
+  \begin{itemize}
+    \item Kubernetes
+    \item Mesos
+  \end{itemize}
+
+Extension of the paper~\cite{pizzolli2016}, with IoT perspective.
+  \begin{itemize}
+    \item implementation
+    \item IoT use cases
+    \item related works
+    \item future works
+  \end{itemize}
+
+\end{frame}
+
+
+
+\section{Implementation}
+
+\subsection{IoT function migration}
+
+\begin{frame}
+\frametitle{IoT roaming}
+ 
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Discovery and container creation}
+
+  \begin{itemize}
+  \item BLE discovers the sensor tag,
+  \item orchestrator is notified,
+  \item orchestrator deploys the container,
+  \item container image is pulled from the Cloud (if not already present on the Gateway),
+  \item container is created/attached/connected,
+  \item container starts,
+  \item first data point is received in the application container.
+  \end{itemize}
+    
+\end{frame}
+
+\begin{frame}
+\frametitle{Loss of connection and container destruction}
+
+  \begin{itemize}
+    \item BLE detects the loss of connection,
+    \item ochestrator is notified,
+    \item ochestrator undeploys the container,
+    \item container is destroyed.
+  \end{itemize}
+    
+\end{frame}
+
+\subsection{IoT offloading}
+
+\begin{frame}
+\frametitle{IoT offloading}
+
+ 
+\end{frame}
+
+
+\section{Use cases}
+
+\subsection{IoT roaming for health care}
+
+\begin{frame}
+\frametitle{IoT roaming for health care}
+
+  Doctor receives notifications from patient's smart bracelet.
+  \begin{itemize}
+    \item the patient leaves his/her home and reaches the hospital
+    \item the wearable device is automatically associated with a new gateway 
+    \item monitoring service is configured accordingly.
+  \end{itemize}
+
+The wearables produce data using the open mhealth standard\footnote{http://www.openmhealth.org/}.
+    
+\end{frame}
+
+\subsection{IoT offloading for remote engine diagnostic}
+
+\begin{frame}
+\frametitle{IoT offloading for remote engine diagnostic}
+  
+  Manufacturing companies deploy continuous and remote monitoring of mechanical engines.
+  \begin{itemize}
+    \item Diagnostic algorithms run in the gateway during critical phases (test and deployment)
+    \item Diagnostic can be pushed back in the Cloud for less critical operations
+  \end{itemize}
+
+\end{frame}
+
+
+
+
+\section{Conclusion}
+
+\begin{frame}
+\frametitle{Conclusion}
+  
+  We presented:
+  \begin{itemize}
+    \item Architecture and implementation of a Fog Computing platform for IoT,
+    \item container migration horizontally and vertically,
+    \item central Cloud, an Edge and two raspberry PI Gateways,
+    \item 2 use cases: IoT roaming in health care context and IoT offloading for remote engine diagnostic.
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Future works}
+
+  \begin{itemize}
+    \item \emph{Infrastructure as Code} on edge devices such as Raspberry PIs.
+    \item tackle the many standards and protocols in different application domains.
+    \item security risks and shared devices
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Acknowledgements}
+
+The author would like to thank the EU H2020 projects Waziup and Agile, and the Create-Net FBK research centre. \\
+
+\end{frame}
+
+\end{document}
