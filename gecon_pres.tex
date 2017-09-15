@@ -45,7 +45,6 @@ While developed countries are discussing about massive deployment of IoT, develo
   \begin{figure}[H]  
   \centering  
   \includegraphics[width=.6\linewidth]{figures/AfricaICTApp}  
-  \caption{Some ICT fields of IoT opportunities in rural environments}   
   \label{figure-AfricaICTApp}  
   \end{figure}
 
@@ -74,30 +73,50 @@ While developed countries are discussing about massive deployment of IoT, develo
 
 \begin{frame}
 \frametitle{Our contribution}
-  
+ 
+  \begin{itemize}
+    \item low-cost HW with LoRa  
+    \item low-cost Cloud platform for IoT and Big Data
+  \end{itemize}
 
 \end{frame}
 
 \section{Entering the IoT era}
 
+\subsection{IoT connectivity}
+
 \begin{frame}
-\frametitle{IoT connectivity made easy}
- 
+\frametitle{Extreme long-range application with new radio technologies}
+Low-Power Wide Area Networks (LoRa):
+  \begin{itemize}
+    \item 20 kms range LOS
+    \item 2-4 kms range non-LOS
+    \item single hop
+  \end{itemize}
+
+
+
 \begin{figure}[H]  
 \centering  
 \includegraphics[width=.55\linewidth]{figures/1-hop}   
-\caption{Extreme long-range application with new radio technologies}   
 \label{figure-1hop}  
 \end{figure} 
 \end{frame}
 
+\subsection{Low-cost DIY IoT hardware}
+
 \begin{frame}
 \frametitle{Low-cost DIY IoT hardware}
- 
+
+Gateway: Raspberry-like embedded Linux
+Sensor nodes: Arduino boards
+
+
+
+
   \begin{figure}[H]  
   \centering  
   \includegraphics[width=.7\linewidth]{figures/generic-iot}   
-  \caption{Generic low-cost IoT hardware}   
   \label{figure-generic-iot}  
   \end{figure} 
 
@@ -106,35 +125,93 @@ While developed countries are discussing about massive deployment of IoT, develo
 \begin{frame}
 \frametitle{Easy integration}
 
+About 7 euro: 2 euro for the Arduino (with ATmega328) and 5 euro for the radio module!
+Arduino Pro Mini: 3.3v 8MHz running a year on 4 AA batteries
   \begin{figure}[H] 
   \centering  
   \includegraphics[width=.8\linewidth]{figures/easy-integration}   
-  \caption{Easy integration with DIY approach for maximum appropriation}   
   \label{figure-easy-integration}  
   \end{figure} 
 
 \end{frame}
 
-\begin{frame}
-\frametitle{Handling IoT data}
+\section{Waziup Cloud platform}
 
+\subsection{Architecture}
+
+\begin{frame}
+\frametitle{Architecture}
+
+Waziup: a holistic IoT platform for Africa
   \begin{figure} 
   \centering  
   \includegraphics[width=.9\linewidth]{figures/GlobalArch}   
-  \caption{IoT platform architecture}   
   \label{figure-globalarch}  
   \end{figure} 
   
 \end{frame}
 
-\section{Waziup IoT platform}
-
 \begin{frame}
-\frametitle{Architecture}
+\frametitle{Local and global Clouds}
 
   \begin{figure}[H] 
   \centering  
-  \includegraphics[width=.7\linewidth]{figures/CloudServicesArchitecture.png}   
+  \includegraphics[width=.7\linewidth]{figures/localglobalcloud}   
+  \caption{Waziup local and global deployment}
+  \label{fig-localglobalcloud}  
+  \end{figure}
+    
+\end{frame}
+
+\begin{frame}
+\frametitle{API}
+
+    
+\end{frame}
+\subsection{Security}
+
+\begin{frame}
+\frametitle{Platform security}
+  
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=.6\linewidth]{figures/ServicesArchitecture.png}
+  \caption{Detailed view of WAZIUP Cloud platform, and services architecture}
+  \label{fig-services}
+  \end{figure}
+
+  \begin{itemize}
+  \item Authentication: OpenID, OAuth tokens 
+  \item Authorization: Role Based Access Control (RBAC)
+  
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Platform security}
+  
+  \begin{itemize}
+  \item Authentication: OpenID, OAuth tokens 
+  \item Authorization: Role Based Access Control (RBAC)
+  \end{itemize}
+
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=.6\linewidth]{figures/RBAC.png}
+  \label{fig-services}
+  \end{figure}
+
+\end{frame}
+
+\subsection{Implementation}
+
+\begin{frame}
+\frametitle{Implementation}
+
+  \begin{figure}[H] 
+  \centering  
+  \includegraphics[width=.7\linewidth]{figures/CloudEnv.png}   
   \caption{Global overview of WAZIUP Cloud platform, and services}
   \label{fig-implem}  
   \end{figure}
@@ -151,21 +228,17 @@ While developed countries are discussing about massive deployment of IoT, develo
 \begin{frame}
 \frametitle{Implementation}
  
-\end{frame}
-
-
-
-\begin{frame}
-\frametitle{Local and global Clouds}
 
   \begin{figure}[H] 
   \centering  
-  \includegraphics[width=.7\linewidth]{figures/localglobalcloud}   
-  \caption{Waziup local and global deployment}
-  \label{fig-localglobalcloud}  
+  \includegraphics[width=.7\linewidth]{figures/BackEnd.png}   
+  \caption{Global overview of WAZIUP Cloud platform, and services}
+  \label{fig-implem}  
   \end{figure}
-    
 \end{frame}
+
+
+
 
 \begin{frame}
 \frametitle{Data management \& analytics}
@@ -185,21 +258,26 @@ While developed countries are discussing about massive deployment of IoT, develo
  
 \end{frame}
 
+\subsection{Dashboard}
+
 \begin{frame}
-\frametitle{Dashboard}
+\frametitle{Dashboard - sensors view}
 
   \begin{figure}[H]  
   \centering  
   \includegraphics[width=.73\linewidth]{figures/dashboard} 
-  \caption{A customized dashboard application for the soil moisture scenario}
   \label{fig-dashboard}
   \end{figure}
+
+\end{frame}
   
-  \vspace{-1cm}
-  \begin{figure}[H]  
+\begin{frame}
+\frametitle{Dashboard - graph view}
+
+\vspace{-1cm}
+  \begin{figure} 
   \centering  
-  \includegraphics[width=.73\linewidth]{figures/sensor-data}
-  \caption{Historical data from sensor device}
+  \includegraphics[width=.70\linewidth]{figures/sensor-data}
   \label{fig-sensor-data}
   \end{figure}
  
@@ -213,35 +291,6 @@ While developed countries are discussing about massive deployment of IoT, develo
 
 \end{frame}
 
-\subsection{Security}
-
-\begin{frame}
-\frametitle{Platform security}
-  
-  \begin{figure}[H]
-  \centering
-  \includegraphics[width=.6\linewidth]{figures/ServicesArchitecture.png}
-  \caption{Detailed view of WAZIUP Cloud platform, and services architecture}
-  \label{fig-services}
-  \end{figure}
-
-  \begin{itemize}
-  \item Authentication for interactive use:
-  A user accesses a page (e.g. through a Dashboard web client).
-  The browser sends a request to the APIs server.
-  The server finds out that client has not authenticated yet and redirects the client's browser to a login screen provided by {\tt Keycloak}.
-  
-  
-  \item Authentication for programmatic use (e.g. from a sensor gateway):
-  A user generates (typically through some web-based client) an offline access refresh token.
-  The token is given to a device (e.g.
-  the sensor gateway) as a configuration parameter.
-  When the device wants to make a request, it contacts {\tt Keycloak} and requests an access token to be generated based on the refresh token.
-  
-  
-  \end{itemize}
-
-\end{frame}
 
 
 \section{Conclusion}
