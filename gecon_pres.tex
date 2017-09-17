@@ -39,8 +39,8 @@
 \section{Introduction}
 \begin{frame}
 \frametitle{Introduction}
-  
-While developed countries are discussing about massive deployment of IoT, developing countries are still far from being ready to enjoy the full benefit of IoT.
+  Massive deployment of IoT worlwide \\
+  IoT is a great opportunity for developing countries
 
   \begin{figure}[H]  
   \centering  
@@ -75,8 +75,8 @@ While developed countries are discussing about massive deployment of IoT, develo
 \frametitle{Our contribution}
  
   \begin{itemize}
-    \item low-cost HW with LoRa  
-    \item low-cost Cloud platform for IoT and Big Data
+    \item Low-cost HW with LoRa  
+    \item Low-cost Cloud platform for IoT and Big Data
   \end{itemize}
 
 \end{frame}
@@ -108,7 +108,7 @@ Low-Power Wide Area Networks (LoRa):
 \begin{frame}
 \frametitle{Low-cost DIY IoT hardware}
 
-Gateway: Raspberry-like embedded Linux
+Gateway: Raspberry-like embedded Linux \\
 Sensor nodes: Arduino boards
 
 
@@ -116,7 +116,7 @@ Sensor nodes: Arduino boards
 
   \begin{figure}[H]  
   \centering  
-  \includegraphics[width=.7\linewidth]{figures/generic-iot}   
+  \includegraphics[width=.9\linewidth]{figures/generic-iot}   
   \label{figure-generic-iot}  
   \end{figure} 
 
@@ -129,7 +129,7 @@ About 7 euro: 2 euro for the Arduino (with ATmega328) and 5 euro for the radio m
 Arduino Pro Mini: 3.3v 8MHz running a year on 4 AA batteries
   \begin{figure}[H] 
   \centering  
-  \includegraphics[width=.8\linewidth]{figures/easy-integration}   
+  \includegraphics[width=.9\linewidth]{figures/easy-integration}   
   \label{figure-easy-integration}  
   \end{figure} 
 
@@ -154,10 +154,11 @@ Waziup: a holistic IoT platform for Africa
 \begin{frame}
 \frametitle{Local and global Clouds}
 
+  Local cloud: installation of Waziup on a PC or directly on the gateway
+
   \begin{figure}[H] 
   \centering  
-  \includegraphics[width=.7\linewidth]{figures/localglobalcloud}   
-  \caption{Waziup local and global deployment}
+  \includegraphics[width=0.90\linewidth]{figures/localglobalcloud}   
   \label{fig-localglobalcloud}  
   \end{figure}
     
@@ -166,6 +167,22 @@ Waziup: a holistic IoT platform for Africa
 \begin{frame}
 \frametitle{API}
 
+  \begin{table}
+  \begin{tabular}{l | l }
+    endpoint & methods \\
+    \hline
+    Sensors & GET, POST, PUT, DELETE \\ 
+    Historical data & GET \\
+    Farms & GET, POST, PUT, DELETE\\
+    Notifications & GET, POST, PUT, DELETE \\
+    Socials & GET, POST\\
+    Users & GET, POST, PUT, DELETE \\
+    Security & GET \\
+    CEP & GET, POST, DELETE \\
+    Apps & GET, POST, DELETE 
+  \end{tabular}
+  \end{table}
+  
     
 \end{frame}
 \subsection{Security}
@@ -173,24 +190,6 @@ Waziup: a holistic IoT platform for Africa
 \begin{frame}
 \frametitle{Platform security}
   
-  \begin{figure}[H]
-  \centering
-  \includegraphics[width=.6\linewidth]{figures/ServicesArchitecture.png}
-  \caption{Detailed view of WAZIUP Cloud platform, and services architecture}
-  \label{fig-services}
-  \end{figure}
-
-  \begin{itemize}
-  \item Authentication: OpenID, OAuth tokens 
-  \item Authorization: Role Based Access Control (RBAC)
-  
-  \end{itemize}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Platform security}
-  
   \begin{itemize}
   \item Authentication: OpenID, OAuth tokens 
   \item Authorization: Role Based Access Control (RBAC)
@@ -198,7 +197,7 @@ Waziup: a holistic IoT platform for Africa
 
   \begin{figure}[H]
   \centering
-  \includegraphics[width=.6\linewidth]{figures/RBAC.png}
+  \includegraphics[width=.8\linewidth]{figures/RBAC.png}
   \label{fig-services}
   \end{figure}
 
@@ -209,18 +208,11 @@ Waziup: a holistic IoT platform for Africa
 \begin{frame}
 \frametitle{Implementation}
 
-  \begin{figure}[H] 
+  \begin{figure} 
   \centering  
-  \includegraphics[width=.7\linewidth]{figures/CloudEnv.png}   
-  \caption{Global overview of WAZIUP Cloud platform, and services}
+  \includegraphics[width=.8\linewidth]{figures/CloudEnv.png}   
   \label{fig-implem}  
   \end{figure}
-
-  \begin{enumerate}
-    \item Infrastructure as a Service (IaaS),    
-    \item Container as a Service (CaaS),    
-    \item and finally Platform as a Service (PaaS).
-  \end{enumerate}
 
 \end{frame}
 
@@ -229,16 +221,12 @@ Waziup: a holistic IoT platform for Africa
 \frametitle{Implementation}
  
 
-  \begin{figure}[H] 
+  \begin{figure}
   \centering  
-  \includegraphics[width=.7\linewidth]{figures/BackEnd.png}   
-  \caption{Global overview of WAZIUP Cloud platform, and services}
+  \includegraphics[width=.8\linewidth]{figures/BackEnd.png}   
   \label{fig-implem}  
   \end{figure}
 \end{frame}
-
-
-
 
 \begin{frame}
 \frametitle{Data management \& analytics}
